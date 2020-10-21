@@ -64,8 +64,18 @@
 
             // Here we create the on click event that gets the user's pick
             $(".btn-choice").on("click", function() {
+              var clickedValue = $(this).val()
+              console.log(getRandomInt(4))
 
-              console.log("You clicked a button!!");
+              function getRandomInt(max) {
+          return Math.floor(Math.random() * Math.floor(max) + 1);
+        }
+
+              if (getRandomInt(4) == clickedValue) {
+                alert("You got it!")
+              } else {
+                alert("nope, wrong guess!")
+              }
 
               // Add code to have the computer guess a random number between 1 and 4
               // Then determine which button was clicked
